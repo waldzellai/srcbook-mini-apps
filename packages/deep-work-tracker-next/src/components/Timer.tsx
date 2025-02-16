@@ -1,3 +1,5 @@
+'use client';
+
 import { useState, useEffect } from 'react';
 import { Play, Pause, Square, ZapOff, Clock, CircleX } from 'lucide-react';
 
