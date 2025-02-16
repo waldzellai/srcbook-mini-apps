@@ -6,20 +6,20 @@ This repository is a monorepo containing micro-web utilities built with [Srcbook
 
 ```
 srcbook-mini-apps/
-├── packages/           # All mini-apps are stored here
-│   └── deep-work-tracker/  # Deep work session tracking app
-└── package.json       # Root monorepo configuration
+├── packages/                      # All mini-apps are stored here
+│   └── deep-work-tracker-next/   # Deep work session tracking app (Next.js)
+└── package.json                  # Root monorepo configuration
 ```
-
-Each package in the `packages` directory is deployable to Vercel and contains its own:
-- Source code
-- Dependencies
-- Build configuration
-- Deployment settings
 
 ## Projects
 
-- **Deep Work Tracker**: A web application for tracking deep work sessions and productivity metrics
+### Deep Work Timer
+A web application for tracking deep work sessions and productivity metrics. Built with:
+- Next.js 14 with App Router
+- TypeScript
+- Tailwind CSS
+- Client-side state management
+- Local storage persistence
 
 ## Development
 
@@ -38,9 +38,24 @@ npm run build
 
 ## Deployment
 
-Each package can be deployed independently to Vercel. When setting up a new deployment:
-1. Select the specific package directory as the project root
-2. Vercel will automatically detect the framework and configure build settings
+Each package in this monorepo should be deployed independently:
+
+1. Deep Work Timer (packages/deep-work-tracker-next):
+   ```bash
+   cd packages/deep-work-tracker-next
+   ```
+   Then create a new Vercel project pointing to this directory:
+   - Framework: Next.js
+   - Root Directory: . (current directory)
+   - Build Command: next build
+   - Install Command: npm install
+   - Output Directory: .next
+
+This independent deployment strategy allows each app to:
+- Have its own configuration
+- Deploy independently of other apps
+- Scale according to its own needs
+- Maintain separate development cycles
 
 ## About Srcbook
 
@@ -48,7 +63,3 @@ Srcbook is an innovative development environment that leverages AI to enhance th
 
 - [Srcbook Website](https://srcbook.com)
 - [Srcbook GitHub Repository](https://github.com/srcbookdev/srcbook)
-
-## Repository Structure
-
-This monorepo is organized with each mini-app in its own directory, containing its complete source code and dependencies. This structure allows for independent development while maintaining a centralized repository for all Srcbook-generated utilities.
