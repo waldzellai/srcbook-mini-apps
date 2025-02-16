@@ -1,0 +1,6 @@
+{
+  "rewrites": [{ "source": "/(.*)", "destination": "/packages/deep-work-tracker-next/$1" }],
+  "buildCommand": "cd packages/deep-work-tracker-next && npm run build",
+  "outputDirectory": "packages/deep-work-tracker-next/.next",
+  "installCommand": "cd packages/deep-work-tracker-next && npm install"
+}
