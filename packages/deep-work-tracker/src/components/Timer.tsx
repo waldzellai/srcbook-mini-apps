@@ -1,9 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Play, Pause, Square, ZapOff, Clock, CircleX } from 'lucide-react';
-import { TimerStatus } from '../types/types';
 
 interface TimerProps {
-  onSessionEnd: () => void;
   onInterruption: () => void;
   onAbort: () => void;
   isRunning: boolean;
@@ -14,7 +12,6 @@ interface TimerProps {
 }
 
 export const Timer = ({
-  onSessionEnd,
   onInterruption,
   onAbort,
   isRunning,
@@ -28,7 +25,7 @@ export const Timer = ({
   const [totalSeconds, setTotalSeconds] = useState(0);
 
   useEffect(() => {
-    let interval: number | undefined;
+    let interval: NodeJS.Timeout | undefined;
 
     if (isRunning && !isPaused) {
       interval = setInterval(() => {

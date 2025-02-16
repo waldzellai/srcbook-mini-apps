@@ -22,7 +22,7 @@ function App() {
     }
   }, []);
 
-  const handleStart = (duration: number) => {
+  const handleStart = () => {
     if (timerStatus === 'idle') {
       setSessionStart(new Date().toISOString());
     }
@@ -78,7 +78,6 @@ function App() {
       {!showForm ? (
         <div className="bg-gray-900/50 backdrop-blur-lg p-8 rounded-xl border border-gray-700/50 shadow-xl">
           <Timer
-            onSessionEnd={handleStop}
             onInterruption={handleInterruption}
             onAbort={handleAbort}
             isRunning={timerStatus !== 'idle'}
