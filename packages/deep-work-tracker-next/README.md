@@ -1,3 +1,5 @@
+Check out the [Srcbook-hosted version of the app.](https://deepworktimer.srcbook.app)
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
